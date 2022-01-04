@@ -1,16 +1,47 @@
 *{
-    font-color: $primary-font-color;
+    color: $primary-font-color;
 }
-
+.container{
+background-color: transparent;
+background-size: 20% 120px;
+background-image:  repeating-linear-gradient(to right, #B36856, #B36856 1px, transparent 1px, transparent);
+}
+.circle-bck {
+    background: #e9d9d1;
+    width: 5%;
+    height: 5%;
+    position: fixed;
+    z-index: 0;
+    left: 20%;
+    top: 10%; 
+    &.two{
+        left: 40%;
+        top: 60%; 
+    }
+    &.three{
+        left: 60%;
+        top: 20%; 
+        &.reverse {
+            left: 55%;
+            position: absolute;
+            height: 15vh;
+            z-index: -1;
+        }
+    }
+    &.four{
+        left: 80%;
+        top: 40%; 
+    }
+}
 h1{ 
     &.title.is-1 {
     font-size: 2rem;
     font-weight: 300;
     padding: 2rem;
-    @media screen and (min-width: 1024px) {
-        font-size: 3rem;
-    }
-} 
+        @media screen and (min-width: 1024px) {
+            font-size: 3rem;
+        }
+    } 
 }
 h2{ 
     &.title.is-2 {
@@ -25,7 +56,7 @@ h2{
 
 .navbar{
     &.is-transparent{
-        background-color: $seconday-color;
+        background-color: $secondary-color;
     }
 }
 .custom-fluid{
@@ -39,22 +70,10 @@ h2{
 .cream-block, .pink-block{
     position: relative; 
     padding-bottom: 4rem;
-    &::after{
-        content:'';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-bottom: 50px solid $seconday-color;
-        border-right: 100vw solid transparent;
-        z-index: 0;
-    }
-
     @media screen and (min-width: 1024px) {
         min-height: 100vh;
         &::after{
-            border-bottom: 100px solid $seconday-color;
+            border-bottom: 100px solid $secondary-less-color;
         }
         .column{
             align-self: center;
@@ -62,23 +81,16 @@ h2{
     }
 }
 .cream-block{
-    background-color: $primary-color;
+    background: $primary-less-color;
+    background: linear-gradient(176deg, $primary-less-color 84%, $secondary-less-color 84%, $secondary-less-color 100%);
 }
 .pink-block{
-    background-color: $seconday-color;
-    &::after{
-        border-bottom: 50px solid $primary-color;
-        border-right: 0;
-        left: inherit;
-        right: 0;
-        border-left: 100vw solid transparent;
-    }
+    background: $secondary-less-color;
+    background: linear-gradient(186deg, $secondary-less-color 84%, $primary-less-color 84%, $primary-less-color 100%);
     @media screen and (min-width: 1024px) {
         flex-direction: row-reverse;
         display: flex;
-        &::after{
-            border-bottom: 100px solid $primary-color;
-        }
+   
     }
 }
 
@@ -116,8 +128,7 @@ h2{
         }
           
         label {
-            
-            background: $seconday-color;
+            background: $secondary-color;
             padding: 10px;
             display: block;
             position: relative;
@@ -173,3 +184,4 @@ h2{
         }
     }
 }
+

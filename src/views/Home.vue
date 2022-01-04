@@ -2,11 +2,13 @@
   <div class="home">
     <!--<HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div class="container custom-fluid is-fluid">
+      <div class="circle-bck two"></div>
+      <div class="circle-bck three"></div>
+      <div class="circle-bck three reverse"></div>
+      <div class="circle-bck four"></div>
+      <div class="circle-bck"></div>
       <div class="columns cream-block">
         <div class="column">
-          <div class="home-wrap-logo">
-            <img src="@/assets/images/big-logo.png" alt="logo BARFoodies" />
-          </div>
           <h1 class="title is-1">
             Mejorar la alimentación de nuestros peludos está al alcance de
             todos.
@@ -15,7 +17,14 @@
         <div class="column">
           <div class="block-image">
             <picture>
-              <img src="@/assets/images/image-home.png" alt="logo BARFoodies" />
+              <img
+                data-aos="fade-left"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+                data-aos-once="false"
+                src="@/assets/images/image-home.png"
+                alt="logo BARFoodies"
+              />
               <caption>
                 APROVECHANDO LAS FRUTAS Y VERDURAS QUE TEMOS EN CASA
               </caption>
@@ -35,6 +44,13 @@
           <div class="block-image">
             <picture>
               <img
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-bottom"
                 src="@/assets/images/image-adaptacion.png"
                 alt="logo BARFoodies"
               />
@@ -47,6 +63,7 @@
         </div>
       </div>
       <div class="columns cream-block">
+        <div class="circle-bck three reverse"></div>
         <div class="column">
           <h2 class="title is-2">
             ¿Jugamos a mejorar la alimentación de nuestro amigo?
@@ -107,6 +124,7 @@
 <script>
 import PriceCard from "@/components/PriceCard.vue";
 import Quiz from "@/components/quiz/Quiz.vue";
+import AOS from "aos";
 
 export default {
   name: "Home",
@@ -120,4 +138,6 @@ export default {
     };
   },
 };
+
+AOS.init();
 </script>
